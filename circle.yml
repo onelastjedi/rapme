@@ -3,45 +3,49 @@ jobs:
   build:
     working_directory: ~/rapme
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: circleci/node:8.1.2-browsers
     steps:
       - checkout
-      - setup_remote_docker
+      # - setup_remote_docker
+      # - run:
+      #     name: install dependencies
+      #     command: |
+      #       # #
+      #       # cd /tmp \
+      #       # apk add --update \
+      #       # curl tar \
+      #       # # make g++ wget python libressl-dev linux-headers
+      #       # curl --location --remote-name --silent https://nodejs.org/dist/v8.1.4/node-v8.1.4.tar.gz \
+      #       # tar -xzf node-v8.1.4.tar.gz -C /usr/local --strip-components=1 --same-owner \
+      #       #
+      #       # # wget https://nodejs.org/dist/v8.1.4/node-v8.1.4.tar.gz \
+      #       # # tar -xvf node-v8.1.4.tar.gz \
+      #       # # cd node-v8.1.4.tar.gz \
+      #       # # ./configure \
+      #       # # make -jX \
+      #       # # make install \
+      #       # # node -v
+
+
       - run:
-          name: install dependencies
-          command: |
-            cd /tmp \
-            apk add --update \
-            make g++ wget
-            # wget https://nodejs.org/dist/v8.1.4/node-v8.1.4.tar.gz \
-            # tar -xvf node-v8.1.4.tar.gz \
-            # cd node-v8.1.4.tar.gz \
-            # ./configure \
-            # make -jX \
-            # make install \
-            # node -v
-
-
-      # - run:
-      #     name: install-npm-wee
-      #     command: npm install
-      # - run:
-      #     name: build
-      #     command: npm build
-      # - save_cache:
-      #     key: dependency-cache-{{ checksum "package.json" }}
-      #     paths:
-      #       - .node_modules
+          name: install-npm-wee
+          command: npm install
+      - run:
+          name: build
+          command: npm build
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - .node_modules
   test:
     working_directory: ~/rapme
     docker:
-      # - image: selenium/standalone-chrome:3.1.0
       - image: circleci/node:8.1.2-browsers
     steps:
       - shell:
           name: Install Java
           command: |
-
+            uname -a
       - run:
           name: install-npm-wee
           command: npm install
