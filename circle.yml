@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/rapme
     docker:
-      - image: circleci/8.1.2-browsers
+      - image: circleci/8.1.2-browsers:latest
     steps:
       - checkout
       - run:
@@ -20,7 +20,7 @@ jobs:
     working_directory: ~/rapme
     docker:
       # - image: selenium/standalone-chrome:3.1.0
-      - image: circleci/8.1.2-browsers
+      - image: circleci/8.1.2-browsers:latest
     steps:
       - run:
           name: test
