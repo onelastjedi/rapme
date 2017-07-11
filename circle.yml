@@ -3,41 +3,60 @@ jobs:
   build:
     working_directory: ~/rapme
     docker:
-      - image: circleci/node:8.1.2-browsers
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: install-npm-wee
-          command: npm install
-      - run:
-          name: build
-          command: npm build
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - .node_modules
+          name: install dependencies
+          command: |
+            cd /tmp \
+            apk add --update \
+            make g++ wget
+            # wget https://nodejs.org/dist/v8.1.4/node-v8.1.4.tar.gz \
+            # tar -xvf node-v8.1.4.tar.gz \
+            # cd node-v8.1.4.tar.gz \
+            # ./configure \
+            # make -jX \
+            # make install \
+            # node -v
+
+
+      # - run:
+      #     name: install-npm-wee
+      #     command: npm install
+      # - run:
+      #     name: build
+      #     command: npm build
+      # - save_cache:
+      #     key: dependency-cache-{{ checksum "package.json" }}
+      #     paths:
+      #       - .node_modules
   test:
     working_directory: ~/rapme
     docker:
       # - image: selenium/standalone-chrome:3.1.0
       - image: circleci/node:8.1.2-browsers
     steps:
-      - checkout
+      - shell:
+          name: Install Java
+          command: |
+
       - run:
           name: install-npm-wee
           command: npm install
       - run:
           name: test
           command: npm test
-      - run:
-          name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
+      # - run:
+      #     name: code-coverage
+      #     command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      # - store_artifacts:
+      #     path: test-results.xml
+      #     prefix: tests
+      # - store_artifacts:
+      #     path: coverage
+      #     prefix: coverage
 workflows:
   version: 2
   build_and_test:

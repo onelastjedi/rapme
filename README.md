@@ -12,6 +12,8 @@ Configuration for testing and building this app your can find in [circle.yml]().
 
 # Deploying
 
+So, coz typically big today have a distributed architecture you may
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
