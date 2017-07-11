@@ -6,11 +6,6 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      # - run:
-      #     name: update-npm
-      #     command: 'sudo npm install -g npm@latest'
-      # - restore_cache:
-      #     key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
           command: npm install
@@ -24,8 +19,12 @@ jobs:
   test:
     working_directory: ~/rapme
     docker:
+      - image: circleci/node:latest
       - image: selenium/standalone-chrome:latest
     steps:
+      - run:
+          name: install-npm-wee
+          command: npm install
       - run:
           name: test
           command: npm test
