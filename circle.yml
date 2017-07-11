@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/rapme
     docker:
       - image: circleci/node:latest
     steps:
@@ -21,6 +22,7 @@ jobs:
           paths:
             - .node_modules
   test:
+    working_directory: ~/rapme
     docker:
       - image: selenium/standalone-chrome:latest
     steps:
