@@ -4,6 +4,14 @@
 
 > Epic text-based battle rap app
 
+# Continuous integration
+
+You wanna use tools for testing your code automatically (like [Circleci](), [Travis](), etc).
+
+Configuration for testing and building this app your can find in [circle.yml]().
+
+# Deploying
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
