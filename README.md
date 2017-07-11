@@ -1,4 +1,4 @@
-https://circleci.com/gh/onelastjedi/rapme.svg?style=shield&circle-token=:circle-token
+[circleci status]: https://circleci.com/gh/onelastjedi/rapme.svg?style=shield&circle-token=:circle-token
 
 # Rapme
 
