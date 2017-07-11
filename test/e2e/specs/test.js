@@ -14,7 +14,7 @@ module.exports = {
       .assert.elementPresent('.home-page')
       .assert.elementPresent('h1', 'Home')
 
-      .url('${devServer}/login')
+      .url(`${devServer}/#/login`)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.login-page')
       .assert.elementPresent('h1', 'Login')
