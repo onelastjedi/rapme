@@ -6,13 +6,10 @@
 
 # Continuous integration
 
-You wanna use tools for testing your code automatically (like [Circleci](), [Travis](), etc).
-
-Configuration for testing and building this app your can find in [circle.yml]().
+You wanna use tools for testing your code automatically (like [Circleci](http://circleci.com), [Travis](https://travis-ci.org), etc).
+Configuration for testing and building this app your can find in [circle.yml](circle.yml).
 
 # Deploying
-
-So, coz typically big today have a distributed architecture you may
 
 # License
 
