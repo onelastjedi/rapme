@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn
       - run:
           name: build
-          command: npm build
+          command: yarn build
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -27,11 +27,11 @@ jobs:
           command: |
             sudo apt-get install default-jdk
       - run:
-          name: install-npm-wee
-          command: npm install
+          name: Install Dependencies
+          command: yarn install
       - run:
           name: test
-          command: npm test
+          command: yarn test
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
