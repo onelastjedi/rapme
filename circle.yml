@@ -19,12 +19,8 @@ jobs:
   test:
     working_directory: ~/rapme
     docker:
-      - image: circleci/node:latest
-      - image: selenium/standalone-chrome:latest
+      - image: selenium/node-chrome:latest
     steps:
-      - run:
-          name: install-npm-wee
-          command: npm install
       - run:
           name: test
           command: npm test
