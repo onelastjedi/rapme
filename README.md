@@ -1,3 +1,5 @@
+https://circleci.com/gh/onelastjedi/rapme.svg?style=shield&circle-token=:circle-token
+
 # Rapme
 
 > Epic text-based battle rap app
