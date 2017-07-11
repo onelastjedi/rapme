@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
+          name: Install node modules
           command: yarn
       - run:
           name: build
@@ -27,20 +27,22 @@ jobs:
           command: |
             sudo apt-get install default-jdk
       - run:
-          name: Install Dependencies
+          name: Install node modules
           command: yarn install
       - run:
           name: test
           command: yarn test
-      - run:
-          name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
+      # - run:
+      #     name: code-coverage
+      #     command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      # - store_artifacts:
+      #     path: test-results.xml
+      #     prefix: tests
+      # - store_artifacts:
+      #     path: coverage
+      #     prefix: coverage
+  # deploy:
+  #   working_directory: ~/rapme
 workflows:
   version: 2
   build_and_test:
@@ -52,3 +54,9 @@ workflows:
           filters:
             branches:
               only: master
+      # - deploy:
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: master
