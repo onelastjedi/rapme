@@ -47,6 +47,12 @@ jobs:
       - image: circleci/node:8.1.2-browsers
     steps:
       - checkout
+      - shell:
+          name: Install Dependencies
+          command: |
+            sudo apt-get -y install python-pip python-dev \
+            pip install awscli --upgrade \
+            export PATH=~/.local/bin:$PATH
       - run:
           name: Install node modules
           command: yarn
@@ -54,16 +60,10 @@ jobs:
           name: build
           command: yarn build
       - shell:
-          name: Install Dependencies
-          command: |
-            sudo apt-get -y install python-pip python-dev \
-            pip install awscli --upgrade \
-            export PATH=~/.local/bin:$PATH
-      - shell:
           name: Sync with S3 bucket
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync dist/ s3://rapme
+              aws s3 sync dist/ s3://rapme --delete
             else
               echo "Not master branch so not deploying"
             fi
