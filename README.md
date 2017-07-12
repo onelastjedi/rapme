@@ -7,11 +7,10 @@
 # Continuous integration
 
 You wanna use tools for testing your code automatically (like [CircleCI](https://circleci.com), [Travis](https://travis-ci.org), etc).
-Configuration for test, build and deploy this app located in [circle.yml](circle.yml).
 
-# Deploying
+You can host SPA's as a static website. This app deploying to AWS S3 automatically from CircleCI workflow.
 
-As a static website to AWS S3 automatically from CircleCI workflow.
+Configuration for test, build and deploy located in [circle.yml](circle.yml).
 
 # License
 
