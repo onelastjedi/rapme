@@ -2,7 +2,7 @@
 
 # Rapme
 
-Check live app here: [Rapme](rapme.s3-website.eu-central-1.amazonaws.com)
+Check live app here: [Rapme](https://rapme.s3-website.eu-central-1.amazonaws.com)
 
 > Epic text-based battle rap app
 
