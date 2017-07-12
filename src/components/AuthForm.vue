@@ -22,7 +22,11 @@ export default {
   }),
   methods: {
     signin() {
-      console.log(this.email, this.password)
+      this.$store.commit({
+        type: 'authUser',
+        email: this.email,
+        password: this.password,
+      })
     },
   },
 }
