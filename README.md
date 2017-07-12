@@ -12,6 +12,8 @@ You wanna use tools for testing your code automatically (like [CircleCI](https:/
 
 Configuration for test, build and deploy located in [circle.yml](circle.yml).
 
+# SSL support
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
