@@ -46,7 +46,7 @@ jobs:
     docker:
       - image: circleci/node:8.1.2-browsers
     steps:
-      — checkout
+      - checkout
       - run:
           name: Install node modules
           command: yarn
