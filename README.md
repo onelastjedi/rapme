@@ -6,10 +6,12 @@
 
 # Continuous integration
 
-You wanna use tools for testing your code automatically (like [Circleci](http://circleci.com), [Travis](https://travis-ci.org), etc).
-Configuration for testing and building this app your can find in [circle.yml](circle.yml).
+You wanna use tools for testing your code automatically (like [CircleCI](https://circleci.com), [Travis](https://travis-ci.org), etc).
+Configuration for test, build and deploy this app located in [circle.yml](circle.yml).
 
 # Deploying
+
+As a static website to AWS S3 automatically from CircleCI workflow.
 
 # License
 
