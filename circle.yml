@@ -57,7 +57,7 @@ jobs:
           name: Install Dependencies
           command: |
             sudo apt-get -y install python-pip python-dev \
-            pip install awscli --upgrade --user \
+            pip install awscli --upgrade \
             export PATH=~/.local/bin:$PATH
       - shell:
           name: Sync with S3 bucket
@@ -71,7 +71,7 @@ jobs:
 # https://circleci.com/docs/2.0/worklows/
 workflows:
   version: 2
-  build_and_test:
+  build_test_deploy:
     jobs:
       - build
 
