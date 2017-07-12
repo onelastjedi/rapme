@@ -2,13 +2,13 @@
 
 # Rapme
 
+Check live app here: [Rapme](rapme.s3-website.eu-central-1.amazonaws.com)
+
 > Epic text-based battle rap app
 
 # Continuous integration
 
-You wanna use tools for testing your code automatically (like [CircleCI](https://circleci.com), [Travis](https://travis-ci.org), etc).
-
-You can host SPA's as a static website. This app deploying to AWS S3 automatically from CircleCI workflow.
+You wanna use tools for testing your code automatically (like [CircleCI](https://circleci.com), [Travis](https://travis-ci.org), etc). Then, you can host SPA's as a static website. This app deploying to AWS S3 automatically from CircleCI workflow.
 
 Configuration for test, build and deploy located in [circle.yml](circle.yml).
 
