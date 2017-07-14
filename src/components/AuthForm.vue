@@ -17,8 +17,8 @@
 <script>
 export default {
   data: () => ({
-    email: '',
-    password: '',
+    email: null,
+    password: null,
   }),
   methods: {
     signin() {
