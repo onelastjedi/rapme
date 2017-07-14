@@ -1,17 +1,19 @@
 <template>
-  <form @submit.prevent="signin({ email, password })">
-    <p>
-      <label>Email:</label>
-      <input type="text" v-model="email" />
-    </p>
-    <p>
-      <label>Password:</label>
-      <input type="password" v-model="password" />
-    </p>
-    <template v-if="email && password">
-      <button type="submit">Submit</button>
-    </template>
-  </form>
+  <div class="auth-form">
+    <form @submit.prevent="signin({ email, password })">
+      <p>
+        <label id="email">Email:</label>
+        <input type="text" name="email" v-model="email" />
+      </p>
+      <p>
+        <label id="password">Password:</label>
+        <input type="password" name="password" v-model="password" />
+      </p>
+      <template v-if="email && password">
+        <button type="submit">Submit</button>
+      </template>
+    </form>
+  </div>
 </template>
 
 <script>
