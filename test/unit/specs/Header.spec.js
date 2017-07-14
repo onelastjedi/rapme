@@ -1,14 +1,19 @@
-// import Vue from 'vue'
-// import router from '@/router'
-// import Header from '@/components/Header'
-//
-// describe('Header.vue', () => {
-//   it('should render correct contents', () => {
-//   //   const Ctor = Vue.extend(Header)
-//   //   const vm = new Ctor().$mount()
-//   //   // console.log(router)
-//   //   // console.log(vm.$el)
-//   //   expect(vm).toBe()
-//   // //     .to.equal('<a href="/">Home</a> <a href="/login">Login</a>')
-//   })
-// })
+/* eslint-disable */
+// https://scotch.io/tutorials/how-to-write-a-unit-test-for-vuejs
+// https://gist.github.com/yoavniran/1e3b0162e1545055429e
+// http://ricostacruz.com/cheatsheets/chai.html
+
+import Vue from 'vue'
+import Router from 'vue-router'
+import router from '@/router'
+import Header from '@/components/Header'
+
+describe('Header.vue', () => {
+  it('should render correct contents', () => {
+    const Constructor = Vue.extend(Header)
+    const vm = new Constructor({
+      router
+    }).$mount()
+    expect(vm.$el.querySelectorAll('a')).to.have.lengthOf(2)
+  })
+})

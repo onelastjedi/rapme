@@ -2,10 +2,12 @@
 
 # Rapme
 
-Check live app here: [Rapme](http://rapme.s3-website.eu-central-1.amazonaws.com)
-Rapme at Slack: [Rapme](https://rapme.slack.com)
-
 > Epic text-based battle rap app
+
+Check live app here: [Rapme](http://rapme.s3-website.eu-central-1.amazonaws.com)
+
+<!-- Rapme at Slack: [Rapme](https://rapme.slack.com) -->
+
 
 # Continuous integration
 
