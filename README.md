@@ -2,6 +2,10 @@
 
 # Rapme
 
+I created this app to demonstrate how to use the modern JavaScript stack for creating full-featured SPA without any self-hosted backend.
+
+Feel free to discuss about whole architecture, pros, cons, etc.
+
 > Epic text-based battle rap app
 
 Check live app here: [Rapme](http://rapme.s3-website.eu-central-1.amazonaws.com)
@@ -16,6 +20,8 @@ You wanna use tools for testing your code automatically (like [CircleCI](https:/
 Configuration for test, build and deploy located in [circle.yml](circle.yml).
 
 # Issues
+
+I ran into several problems in developing. Check the [issues](https://github.com/onelastjedi/rapme/issues) if you catch errors.
 
 # SSL support
 
