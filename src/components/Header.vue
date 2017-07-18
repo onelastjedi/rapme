@@ -2,6 +2,7 @@
   <nav>
     <router-link :to="{ name: 'Home' }">Home</router-link>
     <router-link :to="{ name: 'Login' }">Login</router-link>
+    <router-link :to="{ name: 'Signup' }">Signup</router-link>
   </nav>
 </template>
 

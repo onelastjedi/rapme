@@ -14,6 +14,6 @@ describe('Header.vue', () => {
     const vm = new Constructor({
       router
     }).$mount()
-    expect(vm.$el.querySelectorAll('a')).to.have.lengthOf(2)
+    expect(vm.$el.querySelectorAll('a')).to.have.lengthOf(3)
   })
 })
