@@ -1,12 +1,15 @@
+<!-- https://github.com/wearehive/project-guidelines -->
+
 ![circleci status](https://circleci.com/gh/onelastjedi/rapme.svg?style=shield&circle-token=a9cbae75af694a4d454c3f549481b3b692e278ba)
 
 # Rapme
+
+> Epic text-based battle rap app
 
 I created this app to demonstrate how to use the modern JavaScript stack for creating full-featured SPA without any self-hosted backend.
 
 Feel free to discuss about whole architecture, pros, cons, etc.
 
-> Epic text-based battle rap app
 
 Check live app here: [Rapme](http://rapme.s3-website.eu-central-1.amazonaws.com)
 
