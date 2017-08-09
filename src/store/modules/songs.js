@@ -1,5 +1,5 @@
 import apolloClient from '@/api/apolloClient'
-import getAllSongs from '@/api/queries/allSongs.graphql'
+import query from '@/api/queries/allSongs.graphql'
 
 const state = {
   all: null,
@@ -14,7 +14,7 @@ const mutations = {
 const actions = {
   getAllSongs({ commit }) {
     apolloClient.query({
-      query: getAllSongs,
+      query,
       fetchPolicy: 'network-only',
     }).then((res) => {
       commit('SET_SONGS', res.data.allSongs)
