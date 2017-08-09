@@ -24,7 +24,7 @@ export default {
   }),
   methods: {
     signin() {
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'authUser',
         email: this.email,
         password: this.password,
