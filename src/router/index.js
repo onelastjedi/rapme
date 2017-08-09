@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
 import Signup from '@/pages/Signup'
+import Songs from '@/pages/Songs'
+import Song from '@/pages/Song'
 
 Vue.use(Router)
 
@@ -22,6 +25,16 @@ export default new Router({
       path: '/signup',
       name: 'Signup',
       component: Signup,
+    },
+    {
+      path: '/songs',
+      name: 'Songs',
+      component: Songs,
+    },
+    {
+      path: '/songs/:id',
+      component: Song,
+      name: 'Song',
     },
   ],
 })
