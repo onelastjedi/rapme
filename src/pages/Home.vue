@@ -1,6 +1,7 @@
 <template>
   <div class="home-page">
     <h1>Home</h1>
+    <p>Should be like landing page</p>
   </div>
 </template>
 
