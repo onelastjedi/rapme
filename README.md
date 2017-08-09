@@ -10,7 +10,7 @@ I created this app to demonstrate how to use the modern JavaScript stack for cre
 
 Feel free to discuss about whole architecture, security, etc.
 
-Check live app here: [Rapme](http://rapme.s3-website.eu-central-1.amazonaws.com)
+Check live app here: [Rapme](https://dist-pxthhegius.now.sh)
 
 <!-- Rapme at Slack: [Rapme](https://rapme.slack.com) -->
 
@@ -39,4 +39,4 @@ I ran into several problems in developing. Check the [issues](https://github.com
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017-present, Anton (Christian) Denner
+Copyright (c) 2017-present, Anton Komarenko aka J.D.
