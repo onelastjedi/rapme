@@ -1,0 +1,6 @@
+{
+  allSongs {
+    title
+    id
+  }
+}
