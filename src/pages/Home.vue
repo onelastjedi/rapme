@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page">
+  <div class="home-page container">
     <h1>Home</h1>
     <p>Should be like landing page</p>
   </div>
@@ -9,7 +9,3 @@
 export default {
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-</style>

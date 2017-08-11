@@ -1,5 +1,5 @@
 <template>
-  <div class="add-song">
+  <div class="add-song container">
     <h1>Add Song</h1>
   </div>
 </template>
@@ -8,6 +8,3 @@
 export default {
 }
 </script>
-
-<style lang="css">
-</style>
