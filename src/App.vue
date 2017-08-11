@@ -22,9 +22,6 @@ html, body {
   height: 100%;
   background-color: #f2f3f5;
 }
-body {
-  // min-height: 100%;
-}
 #app {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   font-size: 16px;
@@ -48,6 +45,7 @@ ul {
 
   a
     color #0064a8
+    transition color .2s ease-out
     &:hover
       color #a03000
 </style>
