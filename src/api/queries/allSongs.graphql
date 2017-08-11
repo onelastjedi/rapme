@@ -1,9 +1,9 @@
 {
   allSongs(orderBy: score_DESC) {
-    title
     id
-    createdAt
+    title
     score
+    updatedAt
     author {
       id
       nickname

@@ -1,0 +1,21 @@
+subscription {
+  Song {
+    mutation
+    node {
+      id
+      title
+      score
+      updatedAt
+      author {
+        id
+        nickname
+      }
+    }
+    previousValues {
+      id
+      title
+      score
+      updatedAt
+    }
+  }
+}

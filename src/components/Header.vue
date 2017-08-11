@@ -37,12 +37,13 @@ export default {
   top 0
   left 0
   right 0
+  border-bottom 1px solid #000
 
   &-inner
     max-width 800px
     margin 0 auto
     box-sizing border-box
-    padding 17px 20px
+    padding 17px 47px
 
     &-logo
       box-sizing border-box
