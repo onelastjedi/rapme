@@ -13,7 +13,7 @@
           <span class="by">
             by <a href="#">{{ s.author.nickname }}</a>
           </span>
-          <span class="time">{{ s.createdAt | moment("from") }}</span>
+          <span class="time">{{ s.updatedAt | moment("from") }}</span>
         </span>
       </li>
     </ul>
@@ -30,6 +30,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getAllSongs')
+    this.$store.dispatch('subscribeToSongs')
   },
 }
 </script>
