@@ -6,8 +6,15 @@
     <template v-else>
       <ul class="songs-list">
         <li class="songs-list-item" v-for="s in songs">
-          <span class="score">{{s.score}}</span>
+          <span class="score">{{ s.score }}</span>
           <router-link :key="s.id" :to="{name: 'Song', params: {id: s.id}}">{{s.title}}</router-link>
+          <br>
+          <span class="meta">
+            <span class="by">
+              by <a href="#">{{ s.author.nickname }}</a>
+            </span>
+            <span class="time">{{ s.createdAt | moment("from") }}</span>
+          </span>
         </li>
       </ul>
     </template>
@@ -47,5 +54,15 @@ export default {
       width 80px
       text-align center
       margin-top -10px
+
+    .meta
+      font-size .85em
+      color #828282
+
+      a
+        color #828282
+
+        &:hover
+          color #000
 
 </style>
