@@ -2,6 +2,11 @@
   allSongs(orderBy: score_DESC) {
     title
     id
+    createdAt
     score
+    author {
+      id
+      nickname
+    }
   }
 }
