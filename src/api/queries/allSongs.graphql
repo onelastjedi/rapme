@@ -1,6 +1,7 @@
 {
-  allSongs {
+  allSongs(orderBy: score_DESC) {
     title
     id
+    score
   }
 }

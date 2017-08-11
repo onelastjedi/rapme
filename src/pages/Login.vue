@@ -1,5 +1,5 @@
 <template>
-  <div class="login-page">
+  <div class="login-page container">
     <h1>Login</h1>
     <AuthForm />
   </div>
@@ -18,14 +18,11 @@ export default {
   }),
   watch: {
     currentUser() {
-      if (this.currentUser) this.$router.push('/')
+      if (this.currentUser) this.$router.push('/add')
     },
   },
   beforeMount() {
-    if (this.currentUser) this.$router.push('/')
+    if (this.currentUser) this.$router.push('/add')
   },
 }
 </script>
-
-<style>
-</style>
