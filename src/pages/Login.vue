@@ -1,6 +1,7 @@
 <template>
   <div class="login-page container">
-    <h1>Login</h1>
+    <div class="logo">R</div>
+    <h1>Sign in to Rapme</h1>
     <AuthForm />
   </div>
 </template>
@@ -26,3 +27,18 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+  .login-page
+    .logo
+      font-size 42px
+      font-weight 700
+      border 3px solid #2c3e50
+      text-align center
+      width 55px
+      margin 30px auto
+    h1
+      font-size 28px
+      font-weight 200
+      text-align center
+</style>
