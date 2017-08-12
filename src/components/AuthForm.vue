@@ -1,6 +1,11 @@
 <template>
   <div class="auth-form">
-    <div class="flash flash-error">Incorrect username or password.</div>
+    <template v-if="error">
+      <div class="flash flash-error">
+        Incorrect username or password.
+        <span class="flash-close" @click="clearErrors">&times;</span>
+      </div>
+    </template>
     <form @submit.prevent="signin({ email, password })">
         <label id="email">Email:</label>
         <input type="text" name="email" v-focus v-model="email" />
@@ -19,6 +24,11 @@ export default {
     email: null,
     password: null,
   }),
+  computed: {
+    error() {
+      return this.$store.state.user.error === 'GraphQL error: No user found with that information'
+    },
+  },
   methods: {
     signin() {
       this.$store.dispatch({
@@ -26,6 +36,9 @@ export default {
         email: this.email,
         password: this.password,
       })
+    },
+    clearErrors() {
+      this.$store.commit('clearErrors')
     },
   },
   directives: {
@@ -40,10 +53,12 @@ export default {
 
 <style lang="stylus">
   .auth-form
+    box-sizing border-box
     width 320px
     margin 0 auto
 
     .flash
+      position relative
       box-sizing border-box
       font-size 14px
       border-style solid
@@ -51,6 +66,17 @@ export default {
       border-radius 5px
       margin-bottom 15px
       padding 15px 20px
+
+      &-close
+        font-size 28px
+        line-height 0
+        float right
+        line-height .5
+        color rgba(134, 24, 29, .6)
+        cursor pointer
+
+        &:hover
+          color rgba(134, 24, 29, 1)
 
     .flash-error
       color #86181d

@@ -30,15 +30,17 @@ export default {
 
 <style lang="stylus">
   .login-page
+    position relative
+
     .logo
-      font-size 42px
+      font-size 38px
       font-weight 700
       border 3px solid #2c3e50
       text-align center
-      width 55px
+      width 50px
       margin 30px auto
     h1
       font-size 28px
-      font-weight 200
+      font-weight 300
       text-align center
 </style>
