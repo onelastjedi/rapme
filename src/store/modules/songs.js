@@ -1,5 +1,6 @@
 import apolloClient from '@/api/apolloClient'
-import query from '@/api/queries/allSongs.graphql'
+import allSongs from '@/api/queries/allSongs.graphql'
+import createSong from '@/api/mutations/createSong.graphql'
 import subscription from '@/api/subscriptions/song.graphql'
 
 const songsObserver = apolloClient.subscribe({
@@ -35,10 +36,16 @@ const mutations = {
 const actions = {
   getAllSongs({ commit }) {
     apolloClient.query({
-      query,
+      query: allSongs,
       fetchPolicy: 'network-only',
     }).then((res) => {
       commit('SET_SONGS', res.data.allSongs)
+    })
+  },
+  createSong({ commit }, { title, authorId }) {
+    apolloClient.mutate({
+      mutation: createSong,
+      variables: { title, authorId },
     })
   },
   subscribeToSongs({ commit }) {

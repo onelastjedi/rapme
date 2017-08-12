@@ -6,7 +6,7 @@
         <span class="flash-close" @click="clearErrors">&times;</span>
       </div>
     </template>
-    <form @submit.prevent="signin({ email, password })">
+    <form @submit.prevent="signinUser({ email, password })">
         <label id="email">Email:</label>
         <input type="text" name="email" v-focus v-model="email" />
         <label id="password">Password:</label>
@@ -30,9 +30,9 @@ export default {
     },
   },
   methods: {
-    signin() {
+    signinUser() {
       this.$store.dispatch({
-        type: 'authUser',
+        type: 'signinUser',
         email: this.email,
         password: this.password,
       })

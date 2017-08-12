@@ -1,0 +1,6 @@
+mutation createSong($title: String!, $authorId: ID!) {
+  createSong(title: $title, authorId: $authorId) {
+    id
+    title
+  }
+}
