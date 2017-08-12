@@ -32,6 +32,9 @@ export default {
     this.$store.dispatch('getAllSongs')
     this.$store.dispatch('subscribeToSongs')
   },
+  destroyed() {
+    this.$store.dispatch('unsubscribeFromSongs')
+  },
 }
 </script>
 

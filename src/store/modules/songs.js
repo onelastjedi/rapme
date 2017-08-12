@@ -10,6 +10,8 @@ const state = {
   all: null,
 }
 
+let songsSubsObserver
+
 const mutations = {
   SET_SONGS(_, songs) {
     state.all = songs
@@ -40,7 +42,7 @@ const actions = {
     })
   },
   subscribeToSongs({ commit }) {
-    songsObserver.subscribe({
+    songsSubsObserver = songsObserver.subscribe({
       next(data) {
         switch (data.Song.mutation) {
           case 'CREATED':
@@ -56,6 +58,12 @@ const actions = {
         }
       },
     })
+  },
+  unsubscribeFromSongs() {
+    if (songsSubsObserver) {
+      songsSubsObserver.unsubscribe()
+      songsSubsObserver = null
+    }
   },
 }
 
