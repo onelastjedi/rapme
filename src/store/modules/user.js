@@ -1,14 +1,20 @@
+/* eslint-disable */
+import jwtDecode from 'jwt-decode'
 import apolloClient from '@/api/apolloClient'
 import mutation from '@/api/mutations/signinUser.graphql'
 
 const state = {
-  current: window.localStorage.getItem('graphcoolToken'),
   error: null,
+  current: null,
 }
 
 const mutations = {
-  signinUser(_, jwt) {
-    state.current = jwt
+  checkAuth() {
+    const token = window.localStorage.getItem('graphcoolToken')
+    if (token) state.current = jwtDecode(token)
+  },
+  signinUser(_, token) {
+    state.current = jwtDecode(token)
     state.error = null
   },
   logoutUser() {
@@ -24,15 +30,15 @@ const mutations = {
 }
 
 const actions = {
-  authUser({ commit }, { email, password }) {
+  signinUser({ commit }, { email, password }) {
     if (email && password) {
       apolloClient.mutate({
         mutation,
         variables: { email, password },
       }).then((res) => {
-        const jwt = res.data.signinUser.token
-        window.localStorage.setItem('graphcoolToken', jwt)
-        commit('signinUser', jwt)
+        const token = res.data.signinUser.token
+        window.localStorage.setItem('graphcoolToken', token)
+        commit('signinUser', token)
         // eslint-disable-next-line
       }).catch(error => commit('catchErrors', error))
     }

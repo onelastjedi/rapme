@@ -1,7 +1,7 @@
 <template>
 <div class="songs-list-wrapper">
   <template v-if="!songs">
-    Loading...
+    <Loader />
   </template>
   <template v-else>
     <ul class="songs-list">
@@ -22,7 +22,12 @@
 </template>
 
 <script>
+import Loader from '@/components/Loader'
+
 export default {
+  components: {
+    Loader,
+  },
   computed: {
     songs() {
       return this.$store.state.songs.all
