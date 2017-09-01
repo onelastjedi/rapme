@@ -8,5 +8,9 @@ query Song($id: ID!) {
       id
       nickname
     }
+    lyrics {
+			id
+			content
+		}
 	}
 }

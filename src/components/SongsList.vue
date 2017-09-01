@@ -1,6 +1,6 @@
 <template>
 <div class="songs-list-wrapper">
-  <template v-if="!songs.length">
+  <template v-if="songs.length <= 1">
     <Loader />
   </template>
   <template v-else>
