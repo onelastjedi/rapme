@@ -1,13 +1,13 @@
 <template>
-<header class="header">
-  <nav class="header-inner">
-    <router-link :to="{ name: 'Home' }" class="header-inner-logo">R</router-link>
-    <router-link :to="{ name: 'Add Song' }" class="nav-link">Add</router-link>
+<header :class="$style.header">
+  <nav :class="$style.header_nav">
+    <router-link :to="{ name: 'Home' }" :class="$style.header_nav_logo">R</router-link>
+    <router-link :to="{ name: 'Add Song' }" :class="$style.header_nav_link">Add</router-link>
     <template v-if="currentUser">
-      <router-link :to="{ name: 'Home' }" @click.native="logout" class="nav-link">Logout</router-link>
+      <router-link :to="{ name: 'Home' }" @click.native="logout" :class="$style.header_nav_link">Logout</router-link>
     </template>
     <template v-else>
-      <router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link>
+      <router-link :to="{ name: 'Login' }" :class="$style.header_nav_link">Login</router-link>
     </template>
   </nav>
 </header>
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style module lang="stylus">
 .header
   background-color #24292e
   position fixed
@@ -39,13 +39,16 @@ export default {
   right 0
   border-bottom 1px solid #000
 
-  &-inner
+  &_nav
     max-width 800px
     margin 0 auto
     box-sizing border-box
     padding 17px 47px
+    display grid
+    grid-template-columns auto 1fr auto
 
-    &-logo
+
+    &_logo
       box-sizing border-box
       text-align center
       color white
@@ -58,19 +61,14 @@ export default {
       width 24px
       height 24px
 
-    .nav-link
-      display inline-block
+    &_link
       color rgba(255, 255, 255, .75)
-      margin-right 15px
       line-height 1.3
       font-weight 700
       text-decoration none
+      transition .2s color ease-out
 
       &:hover
         color white
-
-      &:last-child
-        margin-right 0
-        float right
 
 </style>
