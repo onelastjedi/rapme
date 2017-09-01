@@ -7,40 +7,40 @@
 
 <script>
 import appHeader from '@/components/Header'
-
 export default {
   components: {
-    appHeader,
+    appHeader
   },
-  created() {
+  created () {
     this.$store.commit('checkAuth')
-  },
+  }
 }
 </script>
 
 <style lang="stylus">
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #f2f3f5;
-}
+html, body
+  margin 0
+  padding 0
+  height 100%
+  background-color #f2f3f5
+
 #app {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  padding-top: 55px;
+  font-family -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+  font-size 16px
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  color #2c3e50
+  padding-top 55px
 }
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-.container
+
+h1, h2
+  font-weight: normal
+
+ul
+  list-style-type none
+  padding 0
+
+:global(.container)
   max-width 800px
   margin 0 auto
   box-sizing border-box
@@ -49,6 +49,8 @@ ul {
   a
     color #0064a8
     transition color .2s ease-out
+
     &:hover
       color #a03000
+
 </style>

@@ -1,6 +1,6 @@
 <template>
 <div class="songs-list-wrapper">
-  <template v-if="!songs">
+  <template v-if="!songs.length">
     <Loader />
   </template>
   <template v-else>
@@ -26,20 +26,20 @@ import Loader from '@/components/Loader'
 
 export default {
   components: {
-    Loader,
+    Loader
   },
   computed: {
-    songs() {
+    songs () {
       return this.$store.state.songs.all
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.$store.dispatch('getAllSongs')
     this.$store.dispatch('subscribeToSongs')
   },
-  destroyed() {
+  destroyed () {
     this.$store.dispatch('unsubscribeFromSongs')
-  },
+  }
 }
 </script>
 

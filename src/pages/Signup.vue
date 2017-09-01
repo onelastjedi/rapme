@@ -7,11 +7,10 @@
 
 <script>
 import AuthForm from '@/components/AuthForm'
-
 export default {
   components: {
-    AuthForm,
-  },
+    AuthForm
+  }
 }
 </script>
 

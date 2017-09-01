@@ -16,27 +16,27 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Songs,
+      component: Songs
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: Login
     },
     {
       path: '/signup',
       name: 'Signup',
-      component: Signup,
+      component: Signup
     },
     {
       path: '/songs',
       name: 'Songs',
-      component: Songs,
+      component: Songs
     },
     {
       path: '/songs/:id',
       component: Song,
-      name: 'Song',
+      name: 'Song'
     },
     {
       path: '/add',
@@ -45,14 +45,14 @@ const router = new Router({
       beforeEnter: (to, from, next) => {
         if (!currentUser()) {
           next({
-            path: '/login',
+            path: '/login'
           })
         } else {
           next()
         }
-      },
-    },
-  ],
+      }
+    }
+  ]
 })
 
 export default router

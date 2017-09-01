@@ -1,0 +1,12 @@
+query Song($id: ID!) {
+	Song(id: $id) {
+    id
+    title
+    score
+    updatedAt
+    author {
+      id
+      nickname
+    }
+	}
+}

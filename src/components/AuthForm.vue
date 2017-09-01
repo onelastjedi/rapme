@@ -22,32 +22,32 @@
 export default {
   data: () => ({
     email: null,
-    password: null,
+    password: null
   }),
   computed: {
-    error() {
+    error () {
       return this.$store.state.user.error === 'GraphQL error: No user found with that information'
-    },
+    }
   },
   methods: {
-    signinUser() {
+    signinUser () {
       this.$store.dispatch({
         type: 'signinUser',
         email: this.email,
-        password: this.password,
+        password: this.password
       })
     },
-    clearErrors() {
+    clearErrors () {
       this.$store.commit('clearErrors')
-    },
+    }
   },
   directives: {
     focus: {
-      inserted(el) {
+      inserted (el) {
         el.focus()
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 

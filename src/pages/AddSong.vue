@@ -17,17 +17,17 @@
 <script>
 export default {
   data: () => ({
-    title: null,
+    title: null
   }),
   methods: {
-    createSong() {
+    createSong () {
       this.$store.dispatch({
         type: 'createSong',
         title: this.title,
-        authorId: this.$store.state.user.current.userId,
+        authorId: this.$store.state.user.current.userId
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

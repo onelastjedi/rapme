@@ -9,7 +9,7 @@ import SongsList from '@/components/SongsList'
 
 export default {
   components: {
-    SongsList,
-  },
+    SongsList
+  }
 }
 </script>

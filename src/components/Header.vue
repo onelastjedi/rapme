@@ -15,16 +15,15 @@
 
 <script>
 import { mapState } from 'vuex'
-
 export default {
   computed: mapState({
-    currentUser: state => state.user.current,
+    currentUser: state => state.user.current
   }),
   methods: {
-    logout() {
+    logout () {
       this.$store.commit('logoutUser')
-    },
-  },
+    }
+  }
 }
 </script>
 
