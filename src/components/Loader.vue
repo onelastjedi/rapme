@@ -1,10 +1,10 @@
 <template>
-  <div class="loader">
+  <div :class="$style.loader">
     Loading...
   </div>
 </template>
 
-<style lang="stylus">
+<style module lang="stylus">
   .loader
     text-align center
 </style>
