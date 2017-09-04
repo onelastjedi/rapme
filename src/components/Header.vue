@@ -17,7 +17,7 @@
 import { mapState } from 'vuex'
 export default {
   computed: mapState({
-    currentUser: state => state.user.current
+    currentUser: state => state.users.current
   }),
   methods: {
     logout () {

@@ -11,7 +11,7 @@ import store from '@/store/'
 
 Vue.use(Router)
 
-const currentUser = () => store.state.user.current
+const currentUser = () => store.state.users.current
 const router = new Router({
   routes: [
     {

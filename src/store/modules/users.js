@@ -1,52 +1,70 @@
-/* eslint-disable */
 import jwtDecode from 'jwt-decode'
 import apolloClient from '@/api/apolloClient'
-import mutation from '@/api/mutations/signinUser.graphql'
+import signinUser from '@/api/mutations/signinUser.graphql'
+import userById from '@/api/queries/user.graphql'
 
 const state = {
   error: null,
   current: null,
+  authors: []
+}
+
+const getters = {
+  authorById: (state, getters) => (id) => {
+    return state.authors.find(o => o.id === id)
+  }
 }
 
 const mutations = {
-  checkAuth() {
+  checkAuth () {
     const token = window.localStorage.getItem('graphcoolToken')
     if (token) state.current = jwtDecode(token)
   },
-  signinUser(_, token) {
+  signinUser (state, token) {
     state.current = jwtDecode(token)
     state.error = null
   },
-  logoutUser() {
+  logoutUser () {
     state.current = null
     window.localStorage.removeItem('graphcoolToken')
   },
-  catchErrors(_, error) {
+  catchErrors (state, error) {
     state.error = error.message
   },
-  clearErrors() {
+  clearErrors (state) {
     state.error = null
   },
+  setAuthors (state, author) {
+    state.authors.push(author)
+  }
 }
 
 const actions = {
-  signinUser({ commit }, { email, password }) {
+  signinUser ({ commit }, { email, password }) {
     if (email && password) {
       apolloClient.mutate({
-        mutation,
-        variables: { email, password },
+        mutation: signinUser,
+        variables: { email, password }
       }).then((res) => {
         const token = res.data.signinUser.token
         window.localStorage.setItem('graphcoolToken', token)
         commit('signinUser', token)
-        // eslint-disable-next-line
       }).catch(error => commit('catchErrors', error))
     }
   },
+  getUserById ({ commit }, { id }) {
+    apolloClient.query({
+      query: userById,
+      variables: { id }
+    }).then((res) => {
+      commit('setAuthors', res.data.User)
+    })
+  }
 }
 
 export default {
   state,
   mutations,
   actions,
+  getters
 }
