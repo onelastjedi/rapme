@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '@/pages/Home'
 import Login from '@/pages/Login'
 import Signup from '@/pages/Signup'
+import Users from '@/pages/Users'
+import User from '@/pages/User'
 import Songs from '@/pages/Songs'
 import Song from '@/pages/Song'
 import AddSong from '@/pages/AddSong'
@@ -27,6 +28,16 @@ const router = new Router({
       path: '/signup',
       name: 'Signup',
       component: Signup
+    },
+    {
+      path: '/users',
+      name: 'Users',
+      component: Users
+    },
+    {
+      path: '/users/:id',
+      name: 'User',
+      component: User
     },
     {
       path: '/songs',

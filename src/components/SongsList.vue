@@ -7,11 +7,11 @@
     <ul class="songs-list">
       <li class="songs-list-item" v-for="s in songs">
         <span class="score">{{ s.score }}</span>
-        <router-link :key="s.id" :to="{name: 'Song', params: {id: s.id}}">{{ s.title }}</router-link>
+        <router-link :key="s.id" :to="{ name: 'Song', params: { id: s.id }}">{{ s.title }}</router-link>
         <br>
         <span class="meta">
           <span class="by">
-            by <a href="#">{{ s.author.nickname }}</a>
+            by <router-link :to="{ name: 'User', params: { id: s.author.id }}">{{ s.author.nickname }}</router-link>
           </span>
           <span class="time">{{ s.updatedAt | moment("from") }}</span>
         </span>
