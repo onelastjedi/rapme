@@ -1,6 +1,10 @@
-query User($id: ID){
+query User($id: ID!){
   User(id: $id) {
     id
     nickname
+    songs {
+      id
+      title
+    }
   }
 }

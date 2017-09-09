@@ -1,8 +1,11 @@
 <template>
   <div :class="$style.user">
-    <template v-if="!author"><Loader /></template>
+    <template v-if="!user"><Loader /></template>
     <template v-else>
-      <h1>{{ author.nickname }}</h1>
+      <h1>{{ user.nickname }}</h1>
+      <div v-for="s in user.songs">
+        <router-link :key="s.id" :to="{ name: 'Song', params: { id: s.id }}">{{ s.title }}</router-link>
+      </div>
     </template>
   </div>
 </template>
@@ -11,7 +14,7 @@
 import Loader from '@/components/Loader'
 export default {
   computed: {
-    author () {
+    user () {
       return this.$store.getters.authorById(this.$route.params.id)
     }
   },
