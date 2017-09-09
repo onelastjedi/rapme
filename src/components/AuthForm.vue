@@ -26,7 +26,7 @@ export default {
   }),
   computed: {
     error () {
-      return this.$store.state.user.error === 'GraphQL error: No user found with that information'
+      return this.$store.state.users.error === 'GraphQL error: No user found with that information'
     }
   },
   methods: {

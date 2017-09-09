@@ -14,7 +14,7 @@ export default {
     AuthForm
   },
   computed: mapState({
-    currentUser: state => state.user.current
+    currentUser: state => state.users.current
   }),
   watch: {
     currentUser () {
